@@ -7,6 +7,7 @@ import collections
 from datetime import datetime
 from datetime import date
 
+#Git hub link: https://github.com/ibilic/P1 
 
 def getData(file):
 	lst = list()
@@ -104,14 +105,12 @@ def mySortPrint(a,col,fileName):
 #Output: NoneFirst,Last,Email,Class,DOB
 
 	with open(fileName, 'w') as f:
-		writer = csv.DictWriter(f, delimiter = ',', fieldnames = ['First', 'Last','Email','Class', 'DOB'])
+		writer = csv.DictWriter(f, delimiter = ',', fieldnames = ['First', 'Last','Email'])
 		x = sorted(a, key = itemgetter(col))
 		for line in x:
 			# writer.writerow({'First':(line['First'] + ','), 'Last':(line['Last'] + ','), 'Email':line['Email']})
 			writer.writerow({'First':(line['First']), 'Last':(line['Last']), 'Email':line['Email']})
-
-
-	#There is spacing between the columns, so it doesn't look exactly like the outfile.
+	#Used a DictWriter so it's not returning the exact same output.
 
 
 
